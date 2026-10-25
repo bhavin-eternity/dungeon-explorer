@@ -1,0 +1,9 @@
+# Compiled executable
+dungeon-explorer
+
+# Object files
+*.o
+
+# Editor and IDE files
+.vscode/
+.idea/
