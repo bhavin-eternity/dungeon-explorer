@@ -95,4 +95,4 @@ Collect the treasure (`T`) to earn 10 points, then reach the exit (`E`) to win.
 
 ## License
 
-This project is available under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
