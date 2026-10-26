@@ -1,29 +1,98 @@
-# Dungeon Explorer
+
+# 🗡️ Dungeon Explorer
 
 A small terminal-based dungeon adventure game written in C.
 
+Explore a grid-based dungeon, collect treasure, avoid walls, and find the exit to win.
+
 ## Features
 
-- Explore a grid-based dungeon
-- Collect treasure
-- Avoid walls and traps
-- Find the exit to win
+- Grid-based dungeon exploration
+- WASD movement controls
+- Wall and boundary collision checks
+- Treasure collection and score tracking
+- Locked exit and win condition
+- Simple Makefile-based build system
 
 ## Requirements
 
 - GCC
-- Make
+- GNU Make
+- Git (for cloning the repository)
 
-## Build and Run
+## Getting Started
+
+Clone the repository:
+
+```bash
+git clone <YOUR_REPOSITORY_URL>
+cd dungeon-explorer
+```
+
+Build the game:
 
 ```bash
 make
+```
+
+Run it:
+
+```bash
 ./dungeon-explorer
+```
 
+Remove the compiled executable:
 
-Controls
-- W: Move up
-- A: Move left
-- S: Move down
-- D: Move right
-- Q: Quit
+```bash
+make clean
+```
+
+## Controls
+
+| Key | Action |
+|---|---|
+| W | Move up |
+| A | Move left |
+| S | Move down |
+| D | Move right |
+| Q | Quit |
+
+## Gameplay
+
+Collect the treasure (`T`) to earn 10 points, then reach the exit (`E`) to win.
+
+| Symbol | Meaning |
+|---|---|
+| P | Player |
+| # | Wall |
+| . | Empty floor |
+| T | Treasure |
+| E | Exit |
+
+## Built With
+
+- C (C11)
+- GCC
+- GNU Make
+- Git
+
+## What I Learned
+
+- Working with 2D arrays
+- Using loops and conditional statements
+- Writing and organizing C functions
+- Using pointers to modify variables
+- Validating movement and managing game state
+- Compiling and tracking changes with GCC, Make, and Git
+
+## Future Improvements
+
+- Multiple dungeon levels
+- Random map generation
+- Traps and enemies
+- High-score saving
+- Automated tests
+
+## License
+
+This project is available under the MIT License.
