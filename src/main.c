@@ -24,7 +24,7 @@ void draw_dungeon(char dungeon[ROWS][COLS + 1],
 }
 
 int move_player(char dungeon[ROWS][COLS + 1],
-                int *player_row, int *player_col, char move)
+                int *player_row, int *player_col, char move, int treasure_collected)
 {
     int new_row = *player_row;
     int new_col = *player_col;
@@ -62,6 +62,12 @@ int move_player(char dungeon[ROWS][COLS + 1],
     if (dungeon[new_row][new_col] == '#')
     {
         printf("You cannot walk through walls!\n");
+        return 0;
+    }
+
+    if (dungeon[new_row][new_col] == 'E' && !treasure_collected)
+    {
+        printf("The exit is locked! Find the treasure first.\n");
         return 0;
     }
 
@@ -109,11 +115,10 @@ int main(void)
             break;
         }
 
-        if (!move_player(dungeon, &playerRow, &playerCol, move))
+        if (!move_player(dungeon, &playerRow, &playerCol, move, treasure_collected))
         {
             continue;
         }
-
 
         if (dungeon[playerRow][playerCol] == 'T')
         {
@@ -126,24 +131,9 @@ int main(void)
 
         if (dungeon[playerRow][playerCol] == 'E')
         {
-            if (treasure_collected)
-            {
-                printf("\nYOU ESCAPED THE DUNGEON!\n");
-                printf("Final score: %d\n", score);
-                break;
-            }
-             printf("The exit is locked! Find the treasure first.\n");
-
-            
-            if (move == 'w' || move == 'W') {
-                playerRow++;
-            } else if (move == 's' || move == 'S') {
-                playerRow--;
-            } else if (move == 'a' || move == 'A') {
-                playerCol++;
-            } else if (move == 'd' || move == 'D') {
-                playerCol--;
-            }
+            printf("\nYOU ESCAPED THE DUNGEON!\n");
+            printf("Final score: %d\n", score);
+            break;
         }
     }
     return 0;
