@@ -25,7 +25,7 @@ Explore a grid-based dungeon, collect treasure, avoid walls, and find the exit t
 Clone the repository:
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
+git clone https://github.com/bhavin-eternity/dungeon-explorer.git
 cd dungeon-explorer
 ```
 
